@@ -13,7 +13,9 @@
     get elementSearched() {return $('.strip_list h3')}
     get emptyResultText() {return $('.container>p')} 
     get iconList() {return $('.icon-th-list')}
-    get map() {return $('#map.google-map')}
+    get map() {return $('#map.google-map')} 
+    get detailLink() {return $('a.btn_listing')}
+    get generalInformation() {return $('.profile')}
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
@@ -22,11 +24,10 @@
         await (await this.inputTypeSearch).setValue(searchText);
         await (await this.inputTypeSubmit).click();
     }
-
     async doClickOnList () {     
         await (await this.iconList).click();
     }
-   
+  
     /**
      * overwrite specifc options to adapt it to page object
      */
